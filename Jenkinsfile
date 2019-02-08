@@ -21,7 +21,7 @@ pipeline {
                             sshPublisherDesc(
                                 configName: 'staging',
                                 sshCredentials: [
-                                    username: "deploy",
+                                    username: "opc",
                                     encryptedPassphrase: "jenkins"
                                 ], 
                                 transfers: [
