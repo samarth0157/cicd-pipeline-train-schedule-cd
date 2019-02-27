@@ -1,11 +1,17 @@
+box: any
+# Build definition
+build:
+  # The steps that will be executed on build
+  steps:
+    
 
-pipeline {
-    agent any
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Running build automation'
-                sh './gradlew build --no-daemon'
-                archiveArtifacts artifacts: 'dist/trainSchedule.zip'
-            }
-        }
+    # A custom script step, name value is used in the UI
+    # and the code value contains the command that get executed
+    - script:
+        name: echo nodejs information
+        code: |
+          echo 'Running build automation'
+          sh './gradlew build --no-daemon'
+          archiveArtifacts artifacts: 'dist/trainSchedule.zip'
+
+
