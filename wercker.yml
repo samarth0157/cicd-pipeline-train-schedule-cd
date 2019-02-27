@@ -1,17 +1,21 @@
-box: any
-# Build definition
+box: ubuntu
 build:
-  # The steps that will be executed on build
   steps:
-    
-
-    # A custom script step, name value is used in the UI
-    # and the code value contains the command that get executed
     - script:
-        name: echo nodejs information
-        code: |
-          echo 'Running build automation'
-          sh './gradlew build --no-daemon'
+      name: step one
+      code: echo "Step One"
+    - script:
+      name: step two
+      code: echo "Step Two"
+    - script:
+      name: step three
+      code: echo "Step Three"
+    - script:
+      name: step four
+      code: echo "Step Four"
+    - script:
+      name: step five
+      code: echo "Step Five"
           
 
 
