@@ -1,21 +1,12 @@
-box: ubuntu
 build:
   steps:
-    - script:
-      name: step one
-      code: echo "Step One"
-    - script:
-      name: step two
-      code: echo "Step Two"
-    - script:
-      name: step three
-      code: echo "Step Three"
-    - script:
-      name: step four
-      code: echo "Step Four"
-    - script:
-      name: step five
-      code: echo "Step Five"
-          
-
-
+    - java/gradle:
+        task: build
+        version: 4.0.1
+        cache_project_cache: true
+        code: |
+        echo "Running build automation"
+        sh './gradlew build --no-daemon'
+        archiveArtifacts artifacts: 'dist/trainSchedule.zip'
+        
+       
